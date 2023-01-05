@@ -67,18 +67,18 @@ func main() {
 	// }
 
 	//================ ARRAY MIN  ==================
-	resp, err := c.ArrayMin(context.Background(), &pb.MnReq{Nums: []int32{2, 3, 4, 3, 42, 3}})
-	if err != nil {
-		log.Println("error while finding  min number of the given array", err.Error())
-		return
-	}
-
-	// 	//================ ARRAY MAX  ==================
-	// resp, err := c.ArrayMax(context.Background(), &pb.MxReq{Nums: 21, 30, 44,100})
+	// resp, err := c.ArrayMin(context.Background(), &pb.MnReq{Nums: []int32{2, 3, 4, 3, 42, 1}})
 	// if err != nil {
-	// 	log.Println("error while finding  max number of the given array", err.Error())
+	// 	log.Println("error while finding  min number of the given array", err.Error())
 	// 	return
 	// }
+
+	// 	//================ ARRAY MAX  ==================
+	resp, err := c.ArrayMax(context.Background(), &pb.MxReq{Nums: []int32{2, 3, 4, 3, 42, 1}})
+	if err != nil {
+		log.Println("error while finding  max number of the given array", err.Error())
+		return
+	}
 
 	fmt.Println(resp)
 
