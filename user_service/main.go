@@ -55,6 +55,9 @@ func (s *user_server) Add(ctx context.Context, req *pb.Sum) (*pb.SumA_B, error) 
 
 func (s *user_server) Division(ctx context.Context, req *pb.DivReq) (*pb.DivResp, error) {
 	var division float32
+	if req.Num1 == 0 {
+		return &pb.DivResp{Num3: 0}, nil	
+	}
 	if req.Num2 == 0 {
 		return nil, errors.New("Bo'luvchi son 0 ga teng! Boshqa son kiriting!")
 	}
