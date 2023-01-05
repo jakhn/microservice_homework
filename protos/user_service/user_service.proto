@@ -1,0 +1,96 @@
+syntax = "proto3";
+
+package user_service;
+
+option go_package = "protos/user_service";
+
+service UserService {
+    rpc GetUserById(UserPrimeryKey) returns (User) {};
+    rpc Add(Sum) returns (SumA_B) ;
+    rpc Subtraction (SubtReq) returns (SubtResp);
+    rpc Multiplication(MultReq) returns (MultResp);
+    rpc Division(DivReq) returns (DivResp);
+    rpc SquareRoot (SqrtReq) returns (SqrtResp);
+    rpc Power (PowReq) returns (PowResp);
+    rpc ArrayMin (MnReq) returns (MnResp);
+    rpc ArrayMax(MxReq) returns (MxResp);
+}
+
+message UserPrimeryKey {
+    int32 id = 1;
+}
+
+message User {
+    int32 id = 1;
+    string full_name = 2;
+    int32 age = 3;
+}
+
+message Sum {
+    int32 num1 = 1;
+    int32 num2 = 2;
+}
+
+message SumA_B {
+    int32 sum_of = 1;
+}
+
+message MxReq {
+   repeated int32 nums = 1;
+}
+
+message MxResp {
+    int32 num = 1;
+}
+
+message DivReq {
+    float num1 = 1;
+    float num2 = 2;
+}
+
+message DivResp {
+    float num3 = 1;
+}
+
+message MultReq {
+    float num1 = 1;
+    float num2 = 2;
+}
+
+message MultResp {
+    float num3 = 1;
+}
+
+message SubtReq {
+    float num1 = 1;
+    float num2 = 2;
+}
+
+message SubtResp {
+    float num3 = 1;
+}
+
+message SqrtReq {
+    float num1 = 1; 
+}
+
+message SqrtResp {
+    float num3 = 1;
+}
+
+message PowReq {
+    float num1 = 1;
+    float num2 = 2;
+}
+
+message PowResp {
+    float num3 = 1;
+}
+
+
+message MnReq {
+    repeated int32 nums = 1;
+ } 
+ message MnResp {
+     int32 num = 1;
+ }
